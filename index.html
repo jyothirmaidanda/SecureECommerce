@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Watch Information</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="google-signin-client_id" content="246374430676-qkbka1oago6m10g2to4on67p32r63986.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="links-container">
+            <li class="link-item"><a href="#" class="link active">Home</a></li>
+            <li class="link-item"><a href="home.html" class="link">About</a></li>
+            <li class="link-item"><a href="contact.html" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="g-signin2" data-onsuccess="onSignIn">
+                <button>Login</button></div>
+                <a href="#" onclick="signOut();">Sign out</a>
+            
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header class="header-section">
+        <h1 class="header-heading"><span>Watch</span>Information</h1>
+    </header>
+
+    <!-- best selling products -->
+    <section class="best-selling-product-section">
+        <h1 class="section-title">Best Watches in 2022</h1>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="img/MK.png" class="product-img" alt="">
+                <p class="product-name">Micheal Kors →</p>
+            </div>
+            <div class="product-card">
+                <img src="img/rolex.png" class="product-img" alt="">
+                <p class="product-name">Rolex</p>
+            </div>
+            <div class="product-card">
+                <img src="img/breitling.png" class="product-img" alt="">
+                <p class="product-name">Breitling →</p>
+            </div>
+            <div class="product-card">
+                <img src="img/audemars.png" class="product-img" alt="">
+                <p class="product-name">Audemars</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
